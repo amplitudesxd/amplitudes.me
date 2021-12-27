@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <!-- if i knew what this did, i'd tell you -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- seo + discord embed -->
+  <meta content="amplitudes.me" property="og:title" />
+  <meta content="amplitudes.#0001" property="og:description" />
+  <meta content="https://amplitudes.me" property="og:url" />
+  <meta content="amplitudes.#0001" name="description" />
+  <meta content="#b145bf" data-react-helmet="true" name="theme-color" />
+
+  <!-- title -->
+  <title>amplitudes.me | welcome</title>
+
+  <!-- assets -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script src="https://unpkg.com/typeit@8.0.1/dist/index.umd.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="intro">
+    <p id="intro-text"></p>
+  </div>
+
+  <div class="bg-image" style="display: none"></div>
+
+  <div class="main" style="display: none">
+    <div class="box">
+      <div class="header">
+        <p class="maintext">amplitudes</p>
+        <span class="subtext"
+          ><p id="subtext"></p>
+          developer</span
+        >
+      </div>
+
+      <div class="footer">
+        <img src="assets/img/discord-512.png" class="social-logo" onclick="openSocial('discord')"></img>
+        <img src="assets/img/github-512.png" class="social-logo" onclick="openSocial('github')"></img>
+        <img src="assets/img/twitter-512.png" class="social-logo" onclick="openSocial('twitter')"></img>
+      </div>
+    </div>
+  </div>
+</body>

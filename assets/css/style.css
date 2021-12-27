@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@500&display=swap');
+
+body {
+  background-color: #000;
+}
+
+p,
+.maintext,
+.subtext {
+  color: #fff;
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.bg-image {
+  background-image: url('../img/background.gif');
+
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+
+  width: 90%;
+
+  height: 35%;
+  max-width: 580px;
+}
+
+.header {
+  position: absolute;
+  top: 15%;
+
+  text-align: center;
+  width: 100%;
+
+  padding: 0%;
+  margin: 0%;
+}
+
+.maintext {
+  font-size: 2.5rem;
+  padding: 0%;
+  margin: 0%;
+}
+
+.subtext {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+#subtext {
+  display: inline;
+}
+
+.footer {
+  position: absolute;
+  bottom: 15%;
+
+  width: 100%;
+
+  /* center all images inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-logo {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  transition: transform 0.2s;
+
+  width: 40px;
+  height: 40px;
+}
+
+.social-logo:hover {
+  transform: scale(1.5);
+}
