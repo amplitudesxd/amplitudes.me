@@ -41,6 +41,8 @@ p,
 
   height: 35%;
   max-width: 580px;
+  
+  border-radius: 5px;
 }
 
 .header {
@@ -58,6 +60,7 @@ p,
   font-size: 2.5rem;
   padding: 0%;
   margin: 0%;
+  padding-bottom: 5px;
 }
 
 .subtext {
