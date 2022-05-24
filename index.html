@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <!-- if i knew what this did, i'd tell you -->
+  <!-- charset + mobile layout -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -17,6 +17,7 @@
 
   <!-- assets -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/rain.css" />
 
   <script src="https://unpkg.com/typeit@8.0.1/dist/index.umd.js"></script>
   <script
@@ -33,7 +34,10 @@
     <p id="intro-text"></p>
   </div>
 
-  <div class="bg-image" style="display: none"></div>
+  <div class="bg-image thunder" style="display: none">
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+  </div>
 
   <div class="main" style="display: none">
     <div class="box">
@@ -52,4 +56,6 @@
       </div>
     </div>
   </div>
+  
+  <script src="assets/js/rain.js"></script>
 </body>

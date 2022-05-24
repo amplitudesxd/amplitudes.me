@@ -2,13 +2,18 @@ let mobile = 'ontouchstart' in document.documentElement;
 
 let switchAllowed = false;
 
+let boxClicks = 0;
+
 function openSocial(type) {
   let url = 'about:blank';
 
   switch (type) {
     case 'discord':
+      /* ~ no longer works ~
       url = 'https://discord.com/users/795466085083906049';
       break;
+      */
+      return alert('amplitudes.#0001');
     case 'github':
       url = 'https://github.com/amplitudesxd';
       break;
@@ -103,4 +108,15 @@ document.addEventListener('touchstart', function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
   startIntroTyping();
+  document.onselectstart = () => false;
+  $('.box').click(() => {
+    boxClicks++;
+
+    if (boxClicks === 10) {
+      // fade out box
+      $('.box').fadeOut(1000, () => {
+        document.body.requestFullscreen();
+      });
+    }
+  });
 });
