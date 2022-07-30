@@ -9,11 +9,8 @@ function openSocial(type) {
 
   switch (type) {
     case 'discord':
-      /* ~ no longer works ~
       url = 'https://discord.com/users/795466085083906049';
       break;
-      */
-      return alert('amplitudes.#0001');
     case 'github':
       url = 'https://github.com/amplitudesxd';
       break;
