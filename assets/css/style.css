@@ -14,23 +14,20 @@ p,
 
 .bg-image {
   background-image: url('../img/background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 
   filter: blur(5px);
   -webkit-filter: blur(5px);
 
   transform: scale(1.1);
+}
 
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  width: 100%;
-  height: 100%;
+@media (max-width: 767px) {
+  .bg-image {
+    background-size: contain;
+  }
 }
 
 .box {
