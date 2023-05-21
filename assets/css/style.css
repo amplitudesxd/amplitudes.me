@@ -24,12 +24,6 @@ p,
   transform: scale(1.1);
 }
 
-@media (max-width: 767px) {
-  .bg-image {
-    background-size: contain;
-  }
-}
-
 .box {
   position: fixed;
   top: 50%;
