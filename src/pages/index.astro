@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialIcon from '../components/SocialIcon.astro';
+---
+<Layout title="amplitudes">
+  <div class="container mx-auto px-4 py-16 max-w-2xl">
+    <div class="bg-neutral-800 rounded-lg shadow-2xl p-10 border border-purple-500/20 space-y-8">
+      <h1 id="hey-im-amplitudes." class="text-5xl font-bold p-1 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+        hey, i'm amplitudes.
+      </h1>
+        
+      <div class="space-y-4 text-center">
+        <p>
+          also known as <span class="text-purple-400 font-semibold">tom</span>, i'm a software
+          developer from london.
+        </p>
+          
+        <p>
+          want to chat? you can reach me at
+          <a href="mailto:hey@amplitudes.me" class="text-purple-400 hover:underline font-semibold">hey@amplitudes.me</a>.
+        </p>
+      </div>
+        
+      <div class="flex justify-center space-x-8">
+        <SocialIcon href="https://github.com/amplitudesxd" icon="bxl:github" />
+        <SocialIcon href="https://discord.com/users/795466085083906049" icon="bxl:discord-alt" />
+      </div>
+    </div>  
+  </div>
+</Layout>
