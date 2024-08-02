@@ -11,6 +11,14 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="@amplitudes" />
+    <meta property="og:url" content="https://amplitudes.me" />
+    <meta property="og:type" content="website" />
+    <meta property="og:color" content="#c084fc" />
+
     <style>
       .grid-background {
         background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill="none" stroke="%237a7a7a" stroke-width="1"%3E%3Cpath d="M0 50L100 50M50 0L50 100M0 0L0 100 100 100 100 0z" opacity="0.1"%3E%3C/path%3E%3C/g%3E%3C/svg%3E');
