@@ -1,20 +1,34 @@
 {
-  "name": "amplitudes.me",
+  "name": "nuxt-app",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "pnpm run build && wrangler pages dev",
+    "postinstall": "nuxt prepare",
+    "deploy": "pnpm run build && wrangler pages deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/inter": "^5.0.20",
-    "@iconify-json/bxl": "^1.1.10",
-    "astro": "^4.13.0",
-    "astro-icon": "^1.1.0",
-    "tailwindcss": "^3.4.7"
+    "@nuxt/icon": "^1.10.3",
+    "@nuxtjs/fontaine": "^0.5.0",
+    "@tailwindcss/vite": "^4.0.9",
+    "@vueuse/core": "^12.7.0",
+    "@vueuse/nuxt": "^12.7.0",
+    "nuxt": "^3.15.4",
+    "tailwindcss": "^4.0.9",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250224.0",
+    "@iconify-json/bx": "^1.2.2",
+    "h3": "^1.15.1",
+    "nitro-cloudflare-dev": "^0.2.1",
+    "prettier": "^3.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "wrangler": "^3.111.0"
   }
 }
