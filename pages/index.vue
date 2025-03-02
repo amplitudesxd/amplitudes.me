@@ -1,23 +1,31 @@
 <template>
-  <div class="mx-auto max-w-2xl px-4 py-12">
-    <h1 class="mb-4 text-2xl font-semibold text-gray-200">hey, i'm amplitudes.</h1>
+  <div class="mx-auto max-w-2xl px-4 py-16">
+    <h1 class="mb-5 text-2xl font-semibold text-gray-100">
+      hey, i'm <span class="text-purple-400">amplitudes</span>.
+    </h1>
 
-    <div class="mb-8 space-y-2 text-gray-300">
+    <div class="mb-10 space-y-3 text-gray-300">
       <p>
         also known as <span class="text-purple-400">tom</span>, i'm a software developer from
         london.
       </p>
       <p>
         want to chat? you can reach me at
-        <a href="mailto:hey@amplitudes.me" class="text-purple-400 hover:text-purple-300">
+        <a
+          href="mailto:hey@amplitudes.me"
+          class="text-purple-400 underline-offset-2 hover:text-purple-300 hover:underline"
+        >
           hey@amplitudes.me</a
         >.
       </p>
     </div>
 
-    <div class="mb-8">
-      <h2 class="mb-3 text-lg font-medium text-gray-200">projects</h2>
-      <div class="space-y-4">
+    <div class="mb-10">
+      <div class="mb-4 flex items-center">
+        <h2 class="text-lg font-medium text-gray-100">projects</h2>
+        <div class="ml-3 h-px flex-grow bg-purple-500/30"></div>
+      </div>
+      <div class="space-y-5">
         <ProjectCard
           v-for="project in projects"
           :key="project.url"
@@ -28,11 +36,11 @@
       </div>
     </div>
 
-    <div class="mb-8">
+    <div class="mb-10">
       <SpotifyStatus />
     </div>
 
-    <div class="flex space-x-3">
+    <div class="flex space-x-4">
       <SocialIcon
         v-for="social in socials"
         :key="social.url"
