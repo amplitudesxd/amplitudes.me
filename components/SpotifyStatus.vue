@@ -46,12 +46,11 @@
 <script setup>
 import { useIntervalFn } from '@vueuse/core';
 
-const requestFetch = useRequestFetch();
+// hacky workaround for cloudflare workers dropping env vars on internal requests
+// previous fix broke (see: github.com/nuxt/nuxt/issues/30433)
+const { origin } = useRequestURL();
+const { data: spotifyData, refresh } = useFetch(`${origin}/api/spotify`);
 
-// can't use $fetch here as it does request emulation which isn't supported by Cloudflare
-const { data: spotifyData, refresh } = useAsyncData('spotify-status', () =>
-  requestFetch('/api/spotify'),
-);
 const { pause, resume } = useIntervalFn(() => refresh(), 30000, { immediate: false });
 
 onMounted(() => resume());
