@@ -25,7 +25,8 @@ interface TrackData {
 export default defineEventHandler(async (event) => {
   try {
     const { cloudflare } = event.context;
-    const { SPOTIFY_CACHE, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = cloudflare.env;
+    const { SPOTIFY_CACHE, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } =
+      cloudflare.env;
 
     if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET || !SPOTIFY_REFRESH_TOKEN) {
       return { isPlaying: false, error: 'Spotify credentials are not set' };
@@ -33,7 +34,7 @@ export default defineEventHandler(async (event) => {
 
     let accessToken: string;
     const cachedToken = await SPOTIFY_CACHE.get('spotify_access_token');
-    
+
     if (cachedToken) {
       accessToken = cachedToken;
     } else {
@@ -50,10 +51,10 @@ export default defineEventHandler(async (event) => {
           refresh_token: SPOTIFY_REFRESH_TOKEN,
         }),
       });
-      
+
       const tokenData: SpotifyTokenResponse = await tokenResponse.json();
       accessToken = tokenData.access_token;
-      
+
       await SPOTIFY_CACHE.put('spotify_access_token', accessToken, {
         expirationTtl: tokenData.expires_in - 60, // refresh 60s before the token expires
       });
@@ -73,7 +74,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const nowPlayingData: SpotifyNowPlayingResponse = await nowPlayingResponse.json();
-    
+
     const responseData: TrackData = {
       isPlaying: nowPlayingData.is_playing,
       trackName: nowPlayingData.item.name,
@@ -85,11 +86,11 @@ export default defineEventHandler(async (event) => {
     return responseData;
   } catch (error) {
     console.error('Error fetching Spotify data:', error);
-    
+
     setResponseHeaders(event, {
-      'Cache-Control': 'no-store'
+      'Cache-Control': 'no-store',
     });
-    
+
     return { isPlaying: false, error: 'Failed to fetch Spotify data' };
   }
 });
