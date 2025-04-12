@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="spotifyData?.isPlaying"
-    class="overflow-hidden rounded-md border border-neutral-700/50 bg-neutral-800/70 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:border-green-500/30 starting:translate-y-3 starting:scale-95 starting:-rotate-1 starting:opacity-0"
+    class="overflow-hidden rounded-md border border-neutral-700/50 bg-neutral-800/70 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] starting:translate-y-3 starting:scale-95 starting:-rotate-1 starting:opacity-0"
   >
     <div class="flex items-center space-x-2 border-b border-neutral-700/50 px-4 py-3">
       <Icon
