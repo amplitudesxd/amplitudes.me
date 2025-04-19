@@ -1,31 +1,36 @@
 <template>
-  <div class="mx-auto max-w-2xl px-4 py-16">
-    <h1 class="mb-5 text-2xl font-semibold text-gray-100">
-      hey, i'm <span class="text-purple-400">amplitudes</span>.
-    </h1>
+  <div class="mx-auto max-w-2xl px-4 py-8">
+    <!-- Header -->
+    <header class="mb-10">
+      <h1 class="text-3xl font-bold text-gray-100">
+        hey, i'm <span class="text-purple-400">amplitudes</span>.
+      </h1>
+      <div class="mt-4 space-y-3 text-gray-300">
+        <p>
+          also known as <span class="text-purple-400">tom</span>, i'm a software developer from
+          london.
+        </p>
+        <p>
+          want to chat? you can reach me at
+          <a
+            href="mailto:hey@amplitudes.me"
+            class="border-b border-purple-400/30 text-purple-400 transition-all duration-300 hover:border-purple-400 hover:text-purple-300"
+          >
+            hey@amplitudes.me</a
+          >
+          :)
+        </p>
+      </div>
+    </header>
 
-    <div class="mb-10 space-y-3 text-gray-300">
-      <p>
-        also known as <span class="text-purple-400">tom</span>, i'm a software developer from
-        london.
-      </p>
-      <p>
-        want to chat? you can reach me at
-        <a
-          href="mailto:hey@amplitudes.me"
-          class="text-purple-400 underline-offset-2 hover:text-purple-300 hover:underline"
-        >
-          hey@amplitudes.me</a
-        >.
-      </p>
-    </div>
-
-    <div class="mb-10">
+    <!-- Projects -->
+    <section class="mb-8">
       <div class="mb-4 flex items-center">
         <h2 class="text-lg font-medium text-gray-100">projects</h2>
-        <div class="ml-3 h-px flex-grow bg-purple-500/30"></div>
+        <div class="ml-3 h-px flex-grow bg-purple-400/30"></div>
       </div>
-      <div class="space-y-5">
+
+      <div class="space-y-4">
         <ProjectCard
           v-for="project in projects"
           :key="project.url"
@@ -34,21 +39,25 @@
           :description="project.description"
         />
       </div>
-    </div>
+    </section>
 
-    <div class="mb-10">
+    <!-- Spotify -->
+    <section class="mb-8">
       <SpotifyStatus />
-    </div>
+    </section>
 
-    <div class="flex space-x-4">
-      <SocialIcon
-        v-for="social in socials"
-        :key="social.url"
-        :name="social.name"
-        :url="social.url"
-        :icon="social.icon"
-      />
-    </div>
+    <!-- Social Links -->
+    <footer>
+      <div class="flex space-x-4">
+        <SocialIcon
+          v-for="social in socials"
+          :key="social.url"
+          :name="social.name"
+          :url="social.url"
+          :icon="social.icon"
+        />
+      </div>
+    </footer>
   </div>
 </template>
 
