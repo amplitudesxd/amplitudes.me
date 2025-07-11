@@ -5,11 +5,13 @@
       <h1 class="text-3xl font-bold text-gray-100">
         hey, i'm <span class="text-purple-400">amplitudes</span>.
       </h1>
+
       <div class="mt-4 space-y-3 text-gray-300">
         <p>
           also known as <span class="text-purple-400">tom</span>, i'm a software developer from
           london.
         </p>
+
         <p>
           want to chat? you can reach me at
           <a
@@ -36,6 +38,7 @@
           :key="project.url"
           :name="project.name"
           :url="project.url"
+          :new="project.new || false"
           :description="project.description"
         />
       </div>
@@ -64,19 +67,25 @@
 <script setup lang="ts">
 const projects = [
   {
+    name: 'Askable',
+    url: 'https://getaskable.com',
+    description: 'AI-powered customer support tool that helps you help your customers faster',
+    new: true,
+  },
+  {
+    name: 'Dropmap',
+    url: 'https://dropmap.net',
+    description: 'Interactive tool which helps players land faster and earn more in Fortnite',
+  },
+  {
     name: 'Ember Client',
     url: 'https://emberclient.com',
     description: 'Feature-rich Minecraft client with a focus on performance and user experience',
   },
   {
-    name: 'Dropmap',
-    url: 'https://dropmap.net',
-    description: 'Interactive tool for optimizing Fortnite landing spots and routes',
-  },
-  {
-    name: 'Luna',
-    url: 'https://myluna.gg',
-    description: "Personal AI friend who's there when you need someone who truly gets it",
+    name: 'Blog',
+    url: '/blog',
+    description: 'Thoughts on development, AI, and other stuff I find interesting',
   },
 ];
 

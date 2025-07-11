@@ -16,9 +16,9 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'amplitudes' },
         {
           property: 'og:description',
-          content: "hey, i'm amplitudes - a software developer from london.",
+          content: "hey, i'm amplitudes.",
         },
-        { name: 'description', content: "hey, i'm amplitudes - a software developer from london." },
+        { name: 'description', content: "hey, i'm amplitudes." },
         { property: 'og:url', content: 'https://amplitudes.me' },
         { property: 'og:type', content: 'website' },
         { name: 'theme-color', content: '#c27aff' },
@@ -35,10 +35,25 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
     },
   },
-  modules: ['nitro-cloudflare-dev', '@vueuse/nuxt', '@nuxt/icon', '@nuxtjs/fontaine'],
+  modules: [
+    '@nuxt/content',
+    'nitro-cloudflare-dev',
+    '@vueuse/nuxt',
+    '@nuxt/icon',
+    '@nuxtjs/fontaine',
+  ],
   icon: {
     clientBundle: {
       scan: true,
+    },
+  },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'github-dark',
+        },
+      },
     },
   },
 });
