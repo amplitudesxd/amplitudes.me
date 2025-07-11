@@ -15,15 +15,14 @@
     "@nuxt/content": "^3.6.3",
     "@nuxt/icon": "^1.15.0",
     "@nuxtjs/fontaine": "^0.5.0",
+    "@nuxtjs/sitemap": "^7.4.3",
     "@tailwindcss/typography": "^0.5.16",
     "@vueuse/core": "^13.5.0",
     "@vueuse/nuxt": "^13.5.0",
     "better-sqlite3": "^12.2.0",
     "nuxt": "^3.17.6",
     "vue": "latest",
-    "vue-router": "latest"
-  },
-  "devDependencies": {
+    "vue-router": "latest",
     "@iconify-json/bx": "^1.2.2",
     "@iconify-json/bxl": "^1.2.2",
     "@tailwindcss/vite": "^4.1.11",

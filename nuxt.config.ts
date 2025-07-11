@@ -12,9 +12,7 @@ export default defineNuxtConfig({
       charset: 'UTF-8',
       viewport: 'width=device-width, initial-scale=1.0',
       title: 'amplitudes',
-      meta: [
-        { name: 'theme-color', content: '#c27aff' },
-      ],
+      meta: [{ name: 'theme-color', content: '#c27aff' }],
     },
   },
   css: ['assets/css/main.css'],
@@ -28,6 +26,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxtjs/sitemap',
     '@nuxt/content',
     'nitro-cloudflare-dev',
     '@vueuse/nuxt',
