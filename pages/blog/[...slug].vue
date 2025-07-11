@@ -39,9 +39,11 @@ if (!post.value) {
   });
 }
 
-useSeoMeta({
-  title: () => (post.value ? `${post.value.title} - amplitudes` : 'post not found - amplitudes'),
-  description: () => post.value?.description || 'blog post not found',
+useSeo({
+  title: post.value ? post.value.title : 'post not found',
+  description: post.value?.description || 'blog post not found',
+  url: `https://amplitudes.me/blog/${Array.isArray(params.slug) ? params.slug.join('/') : params.slug}`,
+  type: 'article',
 });
 
 function formatDate(date: Date): string {

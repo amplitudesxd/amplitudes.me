@@ -13,14 +13,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1.0',
       title: 'amplitudes',
       meta: [
-        { property: 'og:title', content: 'amplitudes' },
-        {
-          property: 'og:description',
-          content: "hey, i'm amplitudes.",
-        },
-        { name: 'description', content: "hey, i'm amplitudes." },
-        { property: 'og:url', content: 'https://amplitudes.me' },
-        { property: 'og:type', content: 'website' },
         { name: 'theme-color', content: '#c27aff' },
       ],
     },

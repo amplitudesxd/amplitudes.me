@@ -3,11 +3,13 @@ title: how i save $300/month on code signing with a raspberry pi
 date: 2025-06-29
 ---
 
-if you don't want Windows to flag your app as malicious or show scary SmartScreen warnings to users, you need a code signing certificate.
+code signing doesn't have to be expensive. i built a self-hosted setup for less than what most cloud services charge in a month.
 
-you've got a few main options for providers: SSL.com, DigiCert and Sectigo (plus their army of resellers). these providers offer two types of certificates: Organization Validation (OV) and Extended Validation (EV).
+if you want Windows to stop flagging your app as suspicious or scaring users with SmartScreen warnings, you'll need a code signing certificate.
 
-OV certificates are cheaper but still trigger SmartScreen warnings. EV certificates are more expensive and have stricter verification requirements, but users won't see SmartScreen warnings, and if you're signing kernel drivers, EV is your only option.
+your main options are SSL.com, DigiCert, and Sectigo (plus their army of resellers). they offer two types of certificates: Organization Validation (OV) and Extended Validation (EV).
+
+OV is cheaper but still triggers SmartScreen. EV is pricier and has stricter verification requirements, but it skips the warnings, and it's required for signing kernel drivers.
 
 ## the sectigo fiasco
 

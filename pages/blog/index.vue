@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-useSeoMeta({
+useSeo({
   title: 'blog - amplitudes',
   description: 'thoughts on development, ai, and other things i find interesting.',
 });
