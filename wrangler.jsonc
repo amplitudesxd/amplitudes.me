@@ -16,6 +16,12 @@
       "binding": "SPOTIFY_CACHE",
       "id": "0d67dae887ce431e86b420d81ea8cd30"
     }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "f9b0b7d6-3073-488d-b82f-de9963663e7d"
+    }
   ]
   /**
    * Smart Placement
