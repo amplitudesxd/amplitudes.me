@@ -27,6 +27,8 @@ function formatDate(date: Date): string {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(date);
+  })
+    .format(date)
+    .toLowerCase();
 }
 </script>
