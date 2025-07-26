@@ -7,10 +7,7 @@
       </h1>
 
       <div class="mt-4 space-y-3 text-gray-300">
-        <p>
-          also known as <span class="text-purple-400">tom</span>, i'm a software developer from
-          london.
-        </p>
+        <p>also known as tom, i'm a software developer from london.</p>
 
         <p>
           want to chat? you can reach me at
