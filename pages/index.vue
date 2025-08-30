@@ -35,7 +35,6 @@
           :key="project.url"
           :name="project.name"
           :url="project.url"
-          :new="project.new || false"
           :description="project.description"
         />
       </div>
@@ -63,12 +62,6 @@
 
 <script setup lang="ts">
 const projects = [
-  {
-    name: 'Askable',
-    url: 'https://getaskable.com',
-    description: 'AI-powered customer support tool that helps you help your customers faster',
-    new: true,
-  },
   {
     name: 'Dropmap',
     url: 'https://dropmap.net',
