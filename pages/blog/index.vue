@@ -11,7 +11,7 @@
       </NuxtLink>
 
       <h1 class="mb-4 text-3xl font-bold text-purple-400">blog</h1>
-      <p class="text-gray-300">thoughts on development, AI, and other stuff I find interesting.</p>
+      <p class="text-gray-300">thoughts and other things i find interesting</p>
     </header>
 
     <!-- Loading State -->

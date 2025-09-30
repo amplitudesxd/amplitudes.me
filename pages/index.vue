@@ -75,7 +75,7 @@ const projects = [
   {
     name: 'Blog',
     url: '/blog',
-    description: 'Thoughts on development, AI, and other stuff I find interesting',
+    description: 'Thoughts and other things I find interesting',
   },
 ];
 
