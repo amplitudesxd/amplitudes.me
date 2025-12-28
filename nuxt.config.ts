@@ -2,7 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-04-12',
+  compatibilityDate: '2025-12-28',
   devtools: { enabled: true },
   app: {
     head: {
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       meta: [{ name: 'theme-color', content: '#c27aff' }],
     },
   },
-  css: ['assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
   },

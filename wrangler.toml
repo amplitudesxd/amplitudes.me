@@ -2,7 +2,7 @@
 # https://developers.cloudflare.com/workers/wrangler/configuration/
 
 name = "amplitudes"
-compatibility_date = "2025-05-05"
+compatibility_date = "2025-12-28"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "./dist"
 
