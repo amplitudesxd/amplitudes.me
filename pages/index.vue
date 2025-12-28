@@ -40,6 +40,34 @@
       </div>
     </section>
 
+    <!-- Tools -->
+    <section class="mb-8">
+      <div class="mb-4 flex items-center">
+        <h2 class="text-lg font-medium text-gray-100">tools</h2>
+        <div class="ml-3 h-px flex-grow bg-purple-400/30"></div>
+      </div>
+
+      <div class="space-y-3">
+        <NuxtLink
+          v-for="tool in tools"
+          :key="tool.url"
+          :href="tool.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between rounded-lg border border-neutral-700/50 bg-neutral-800/70 p-4 transition-all duration-300 hover:border-purple-500/40"
+        >
+          <span>
+            <span class="font-medium text-purple-400">{{ tool.name }}</span>
+            <span class="ml-2 text-sm text-gray-400">{{ tool.description }}</span>
+          </span>
+          <Icon
+            name="bx:right-arrow-alt"
+            class="transform text-gray-500 transition-all duration-300 group-hover:translate-x-1 group-hover:text-purple-400"
+          />
+        </NuxtLink>
+      </div>
+    </section>
+
     <!-- Spotify -->
     <section class="mb-8">
       <SpotifyStatus />
@@ -76,6 +104,14 @@ const projects = [
     name: 'Blog',
     url: '/blog',
     description: 'Thoughts and other things I find interesting',
+  },
+];
+
+const tools = [
+  {
+    name: 'minecraft player lookup',
+    url: 'https://names.amplitudes.me',
+    description: 'search names, skins, and linked socials',
   },
 ];
 
