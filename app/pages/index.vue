@@ -113,6 +113,11 @@ const tools = [
     url: 'https://names.amplitudes.me',
     description: 'search names, skins, and linked socials',
   },
+  {
+    name: 'global tax calculator',
+    url: 'https://tax.amplitudes.me',
+    description: 'compare personal taxes across countries',
+  },
 ];
 
 const socials = [
