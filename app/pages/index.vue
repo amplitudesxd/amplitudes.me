@@ -115,7 +115,7 @@ const tools = [
   },
   {
     name: 'global tax calculator',
-    url: 'https://tax.amplitudes.me',
+    url: 'https://globaltaxcalculator.net',
     description: 'compare personal taxes across countries',
   },
 ];
