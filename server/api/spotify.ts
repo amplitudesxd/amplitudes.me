@@ -5,31 +5,37 @@ interface SpotifyTokenResponse {
 
 interface SpotifyNowPlayingResponse {
   is_playing: boolean;
+  progress_ms: number;
   item: {
     name: string;
+    duration_ms: number;
     artists: { name: string }[];
     album: { images: { url: string }[] };
     external_urls: { spotify: string };
   };
 }
 
-interface TrackData {
-  isPlaying: boolean;
-  trackName?: string;
-  artist?: string;
-  albumArt?: string;
-  songUrl?: string;
-  error?: string;
-}
+type SpotifyStatus =
+  | { isPlaying: false }
+  | {
+      isPlaying: true;
+      track: {
+        name: string;
+        artist: string;
+        albumArt: string;
+        url: string;
+      };
+      endsAt: number;
+    };
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event): Promise<SpotifyStatus> => {
   try {
     const { cloudflare } = event.context;
     const { SPOTIFY_CACHE, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } =
       cloudflare.env;
 
     if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET || !SPOTIFY_REFRESH_TOKEN) {
-      return { isPlaying: false, error: 'Spotify credentials are not set' };
+      return { isPlaying: false };
     }
 
     let accessToken: string;
@@ -73,24 +79,32 @@ export default defineEventHandler(async (event) => {
       return { isPlaying: false };
     }
 
-    const nowPlayingData: SpotifyNowPlayingResponse = await nowPlayingResponse.json();
+    const data: SpotifyNowPlayingResponse = await nowPlayingResponse.json();
 
-    const responseData: TrackData = {
-      isPlaying: nowPlayingData.is_playing,
-      trackName: nowPlayingData.item.name,
-      artist: nowPlayingData.item.artists.map((artist) => artist.name).join(', '),
-      albumArt: nowPlayingData.item.album.images[0]?.url,
-      songUrl: nowPlayingData.item.external_urls.spotify,
-    };
+    if (!data.is_playing) {
+      return { isPlaying: false };
+    }
 
-    return responseData;
-  } catch (error) {
-    console.error('Error fetching Spotify data:', error);
+    const remainingMs = data.item.duration_ms - data.progress_ms;
 
+    // cache until the track ends, up to a max of 30s
     setResponseHeaders(event, {
-      'Cache-Control': 'no-store',
+      'Cache-Control': `s-maxage=${Math.min(Math.floor(remainingMs / 1000), 30)}`,
     });
 
-    return { isPlaying: false, error: 'Failed to fetch Spotify data' };
+    return {
+      isPlaying: true,
+      track: {
+        name: data.item.name,
+        artist: data.item.artists.map((a) => a.name).join(', '),
+        albumArt: data.item.album.images[0]?.url,
+        url: data.item.external_urls.spotify,
+      },
+      endsAt: Date.now() + remainingMs,
+    };
+  } catch (error) {
+    console.error('Error fetching Spotify data:', error);
+    setResponseHeaders(event, { 'Cache-Control': 'no-store' });
+    return { isPlaying: false };
   }
 });
