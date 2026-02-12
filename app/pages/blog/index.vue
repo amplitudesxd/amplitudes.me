@@ -11,7 +11,7 @@
       </NuxtLink>
 
       <h1 class="mb-4 text-3xl font-bold text-purple-400">blog</h1>
-      <p class="text-gray-300">thoughts and other things i find interesting</p>
+      <p class="text-gray-300">thoughts and things i find interesting</p>
     </header>
 
     <!-- Loading State -->
@@ -42,7 +42,7 @@
 <script setup lang="ts">
 useSeo({
   title: 'blog - amplitudes',
-  description: 'thoughts on development, ai, and other things i find interesting.',
+  description: 'thoughts and things i find interesting.',
 });
 
 const { data: posts, pending } = await useAsyncData('blog-posts', () =>

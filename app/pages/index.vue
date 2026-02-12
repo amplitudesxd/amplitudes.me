@@ -103,7 +103,7 @@ const projects = [
   {
     name: 'Blog',
     url: '/blog',
-    description: 'Thoughts and other things I find interesting',
+    description: 'Thoughts and things I find interesting',
   },
 ];
 
