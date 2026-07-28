@@ -31,12 +31,28 @@ export default defineNuxtConfig({
     'nitro-cloudflare-dev',
     '@vueuse/nuxt',
     '@nuxt/icon',
-    '@nuxtjs/fontaine',
+    '@nuxt/fonts',
   ],
+  fonts: {
+    families: [
+      {
+        name: 'Inter',
+        src: '/fonts/InterVariable.woff2',
+        weight: '100 900',
+        display: 'swap',
+      },
+    ],
+  },
   icon: {
     clientBundle: {
       scan: true,
     },
+  },
+  site: {
+    url: 'https://amplitudes.me',
+  },
+  sitemap: {
+    zeroRuntime: true,
   },
   content: {
     build: {
